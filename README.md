@@ -1,46 +1,49 @@
 # Análise de Inadimplência em Cartões de Crédito
 
 ## Descrição do Projeto
-Este projeto tem como objetivo analisar o comportamento de clientes de cartão de crédito para identificar padrões associados à inadimplência e gerar insights estratégicos aplicáveis à gestão de risco e prevenção de perdas.
+Este projeto analisa o comportamento de clientes para identificar padrões associados à inadimplência e gerar insights estratégicos aplicáveis à gestão de risco e prevenção de perdas. A análise demonstra como o uso do crédito e o ciclo de vida do cliente influenciam o risco de default, provando que o comportamento é, muitas vezes, mais preditivo que a renda isolada.
 
-A análise explora variáveis socioeconômicas, contratuais e, principalmente, comportamentais, evidenciando como o uso do crédito e as interações com o banco influenciam o risco de default.
+## Objetivos
+- Identificar fatores demográficos e financeiros associados à inadimplência;
 
+- Avaliar a eficiência da concessão de limites vs. o uso real do cartão;
 
-## Objetivo
-- Identificar fatores associados à inadimplência;
-- Avaliar a importância de variáveis comportamentais;
 - Gerar recomendações práticas para políticas de crédito e modelos de risco.
 
+## Metodologia e Ferramentas
+- Utilizando Python (Pandas, NumPy, Seaborn e Matplotlib), a análise foi conduzida em etapas:
 
-##  Metodologia
-A análise foi conduzida em etapas progressivas:
-- Exploração e limpeza dos dados;
-- Análise de inadimplência por renda, idade e escolaridade;
-- Análises cruzadas entre perfil socioeconômico e limite de crédito;
-- Avaliação do uso do cartão (gastos, transações e utilização);
-- Investigação do impacto das interações com o banco;
-- Consolidação de insights e recomendações.
+- Limpeza e Exploração: Tratamento de dados e análise de variáveis isoladas.
 
+- Análise Cruzada: Correlação entre Faixa Etária, Salário e Taxas de Inadimplência.
 
-## Principais Insights
-- Variáveis cadastrais isoladas têm baixo poder preditivo;
-- Dados ausentes, como renda não informada, indicam maior risco;
-- Limites muito baixos concentram alta inadimplência;
-- Clientes inadimplentes tendem a usar pouco o cartão;
-- O número de interações com o banco é o sinal mais forte de risco.
+- Comportamento de Uso: Avaliação da relação entre Limite de Crédito e Volume de Transações.
 
+- Consolidação: Geração de insights para tomada de decisão de negócio.
 
-## Ferramentas Utilizadas
-- Python
-- Pandas
-- NumPy
-- Seaborn
-- Matplotlib
+## Principais Insights (Findings)
+### 1. O Paradoxo do Risco: Idade vs. Renda
+Segmento Resiliente: Jovens (até 35 anos) com renda média ($40K - $60K) representam o menor risco da carteira, com apenas 9% de inadimplência.
 
+O Ponto de Atenção: O maior risco está concentrado no público 55+ com alta renda ($120K+), onde a taxa de inadimplência atinge 20%, desafiando modelos que associam automaticamente alta renda a baixo risco.
 
-##  Resultados
-Os resultados demonstram que a inadimplência está mais associada ao comportamento de uso e sinais de estresse financeiro do que à renda ou ao tipo de produto.
+Sinal de Alerta: A ausência de dados cadastrais (renda "na") correlaciona-se diretamente com um risco elevado (>18%).
 
+### 2. Comportamento e Eficiência de Crédito
+Exposição Ineficiente: Identificamos clientes de alto risco com limites elevados (>$30.000) que realizam poucas transações. Isso indica capital imobilizado com alta exposição desnecessária.
+
+Estresse Financeiro: Clientes com limites baixos, mas alta frequência de uso (>100 transações/ano), mostram sinais de superendividamento.
+
+Interação com o Banco: O número de contatos e interações é o sinal comportamental mais forte; inadimplentes tendem a usar menos o produto antes do default ou apresentar sinais de estresse em múltiplos canais.
+
+## Recomendações Estratégicas
+Refinamento de Modelos: Incorporar variáveis comportamentais e idade como pesos negativos para limites agressivos em perfis seniores.
+
+Fidelização Estratégica: Priorizar a expansão de crédito e retenção no público jovem de classe média ($40K-$60K), o grupo de maior fidelidade e pagamento.
+
+Otimização de Limites: Reduzir limites ociosos de clientes no grupo de risco para melhorar os indicadores de PDD (Provisão para Devedores Duvidosos).
+
+Enriquecimento Cadastral: Mitigar o volume de dados não informados para reduzir pontos cegos na análise de risco.
 
 ## Conclusão
-Modelos tradicionais baseados apenas em dados cadastrais são insuficientes para prever inadimplência. A incorporação de variáveis comportamentais permite antecipar o risco e melhorar decisões de crédito.
+Modelos tradicionais baseados apenas em dados cadastrais são insuficientes. A verdadeira inteligência de crédito reside na incorporação de variáveis comportamentais (frequência de uso, histórico de transações e interações), permitindo antecipar riscos de forma mais precisa e rentável.
